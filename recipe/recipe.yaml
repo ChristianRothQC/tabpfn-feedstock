@@ -42,7 +42,9 @@ requirements:
     - lightgbm >=3.0
     - safetensors
     - tqdm >=4.66.0
-    - skrub >=0.7,<0.11
+    # skrub <0.10.1 breaks with joblib >=1.6.0, which dropped its vendored
+    # cloudpickle (joblib.externals.cloudpickle); fixed in skrub 0.10.1.
+    - skrub >=0.10.1,<0.11
     - matplotlib-base >=3.6.1
 tests:
   - python:
